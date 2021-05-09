@@ -1,0 +1,29 @@
+/*
+  Project main stylesheet
+*/
+h1.title, h6>a {
+    color: purple;
+  }
+  
+  h6>a {
+    text-decoration: none;
+  }
+  
+  h6>a:hover, .menu-item:hover {
+    color: rgb(210, 5, 218);
+  }
+  
+  a.menu-item {
+    color: black;
+    text-decoration: none;
+  }
+  
+  div.wine-block {
+    border: 1px solid gray;
+  }
+  
+  footer {
+      text-align: center;
+      border-top: 1px solid silver;
+      margin: 15px 0;
+  }
