@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="fr">
+<html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -28,41 +28,102 @@
     <!-- Project -->
     <script src="js/main.js" defer></script>
     <link href="css/style.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   </head>
   <body>
-    <header class="container d-flex flex-wrap justify-content-center">
+    <header class="container-fluid d-flex flex-wrap justify-content-center">
       <div class="col-12 col-lg-auto mb-2 mb-lg-0 me-lg-auto">
-        <a><h1 class="title">MonCellier</h1></a>
+        <a href="index.html" class="title"><h1 class="title">MonCellier</h1></a>
       </div>
       <nav class="d-flex text-end align-items-center">
-        <a href="#" class="px-3 menu-item">Home</a>
-        <a href="#" class="px-3 menu-item">About</a>
+        <a href="index.html" class="px-3 menu-item">Home</a>
+        <a href="about.html" class="px-3 menu-item">About</a>
+        <a href="login.html" class="px-3 menu-item">Log in</a>
       </nav>
     </header>
-    <div class="container pt-2">
+    <div class="container-fluid pt-2">
       <div class="row">
         <form id="frmSearch" action="#" method="get" class="col-3">
-          <input  type="text"name="keyword"id="keyword"placeholder="Enter keyword here..."class="col-7 mx-2">
-          <button id="btSearch"name="btSearch"type="submit"  class="btn btn-success col-4">Search</button>
+          <input type="text" name="keyword"id="keyword"placeholder="Enter keyword here"class="col-7 mx-2" autocomplete="off"/>
+          <i id="resetList" class="fa fa-times fa-1x" style="margin-left: 10px;"></i>
+
+          <button id="btSearch"name="btSearch"type="button"class="btn btn-success col-4">Search</button>
+
         </form>
-        <form id="frmFilter" action="#" method="get" class="col-3">
-          <select name="filters" id="filters" class="col-8 mx-2">
-            <option value="">Select</option>
+        <form id="frmFilter" action="#" method="get" class="col-6">
+          <select name="filters" id="filters" class="col-3 mx-2">
+            <option value=""></option>
             <option value="grapes">Grapes</option>
             <option value="country">Country</option>
             <option value="region">Region</option>
-            <option value="year">Year</option>
           </select>
-          <button id="btFilter"name="btFilter"type="button" class="btn btn-primary col-3">Filter</button>
+          <select name="filterYear" id="filterYear" class="col-3 mx-2">
+            <option value=""></option>
+            <option value="">2020</option>
+            <option value="">2019</option>
+            <option value="">2018</option>
+            <option value="">2017</option>
+          </select>
+          <button
+            id="btFilter"
+            name="btFilter"
+            type="button"
+            class="btn btn-primary col-2"
+          >
+            Filter
+          </button>
         </form>
       </div>
     </div>
-    <main class="container py-4">
-      <div id="wines" class="row d-flex flex-wrap justify-content-between">
-       
+    <hr>
+    <main class="container-fluid  py-4">
+      <div class="row d-flex flex-wrap">
+        <div class="col-3 md-3 mb-5">
+          <ul id="list" class="list-group">
+            
+          </ul>
+        </div>
+        <div class="wineCard col row">
+            <div class="col">
+            <img src="images/generic.jpg" id="pictureWine" alt="wine 1"> 
+            </div>
+          <div class="col align-self-center">
+            <ul class="wineDescription">
+              <span id="idWine" class="h4 d-inline">&#35;Id</span>
+              <li id="nameWine" class="h4 d-inline">Name</li>
+              <li id="grapesWine">Grapes</li>
+              <li id="yearWine">Year</li>
+              <li id="countryWine">Country</li>
+              <li id="regionWine">Region</li>
+              <li id="capacityWine">Capacity</li>
+              <li id="colorWine">Color</li>
+              <li id="priceWine">Price</li>
+            </ul>         
+          </div>
+        <div class="col mt-3">         
+          <ul class="tabs">
+            <li data-tab-target="#description" class=" active tab">Description</li>
+            <li data-tab-target="#comments" class="tab">Comments</li>
+            <li data-tab-target="#notes" class="tab">Personal notes</li>
+          </ul>
+          <div class="tab-content">
+            <div id="description" data-tab-content class="active">
+                <p id="descriptionWine"></p>
+            </div>
+
+            <div id="comments" data-tab-content>
+                <p></p>
+            </div>
+            <div id="notes" data-tab-content>
+                <p></p>
+            </div>
+            </div>
+        </div>
       </div>
-      <ul class="list"></ul>
+        </div>
+        
     </main>
+   
     <footer>&copy;EPFC</footer>
   </body>
 </html>

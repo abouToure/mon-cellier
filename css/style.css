@@ -1,29 +1,121 @@
 /*
   Project main stylesheet
 */
-h1.title, h6>a {
-    color: purple;
-  }
-  
-  h6>a {
-    text-decoration: none;
-  }
-  
-  h6>a:hover, .menu-item:hover {
-    color: rgb(210, 5, 218);
-  }
-  
-  a.menu-item {
-    color: black;
-    text-decoration: none;
-  }
-  
-  div.wine-block {
-    border: 1px solid gray;
-  }
-  
-  footer {
-      text-align: center;
-      border-top: 1px solid silver;
-      margin: 15px 0;
-  }
+
+/* index style */
+div img {
+  padding-left: 100px;
+}
+
+span#idWine {
+  border: 1px solid gray;
+  border-radius: 10px;
+  background-color: gray;
+  padding: 3px 10px;
+  color: white;
+
+}
+
+ul.wineDescription  > li {
+  list-style-type: none;
+  padding-bottom: 5px;
+  margin-top: 5px;
+}
+
+li#nameWine {
+  color: purple;
+}
+
+a.title {
+  text-decoration: none;
+  color: purple;
+}
+
+
+.menu-item:hover {
+  color: rgb(210, 5, 218);
+}
+
+a.menu-item {
+  color: black;
+  text-decoration: none;
+}
+
+ul.list-group {
+  cursor: pointer;
+}
+
+.list-group-item.active {
+  background-color: purple;
+  color: white;
+  border-color: purple;
+  font-weight: bold;
+}
+
+footer {
+    text-align: center;
+    border-top: 1px solid silver;
+    margin: 5px 0;
+}
+
+
+/* Wine tabs */
+[data-tab-content] {
+  display: none;
+}
+
+.active[data-tab-content]{
+  display: block;
+}
+
+.tabs {
+  display: flex;
+  list-style-type: none;
+  margin: 0 0 0 530px;
+  background-color: lightgray;
+  padding: 0;
+  border: 1px solid gray;
+  border-bottom: none;
+}
+
+.tab {
+  cursor: pointer;
+  padding: 10px 20px 10px 20px;
+  border: 1px solid gray;
+  border-bottom: none;
+  margin: 2px 5px 0px 2px;
+  background-color: white;
+}
+
+.tab.active {
+  background-color: purple;
+  color: white;
+}
+
+.tab:hover {
+  background-color: purple;
+  color: white;
+}
+
+.tab-content {
+  margin: 0 0 0 530px;
+  padding: 5px 5px;
+  border: 1px solid gray;
+  border-top: none;
+}
+
+#wine {
+  display: none;
+}
+#frmSearch{
+  position: relative;
+}
+#resetList {
+	position: absolute;
+  display: none;
+	top: 10px;
+	z-index: 1;
+  left: 160px;
+	cursor: pointer;
+	opacity: 0.8;
+}
